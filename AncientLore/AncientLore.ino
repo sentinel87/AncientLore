@@ -313,6 +313,7 @@ bool compareAndUpdateScore()
   int temp=0;
   int temp2=0;
   int index=0;
+
   for(int i=0;i<5;i++)
   {
     if(Score>ScoreBoard[i])
@@ -323,6 +324,11 @@ bool compareAndUpdateScore()
        isScoreQualified=true;
        break;
     } 
+  }
+
+  if(!isScoreQualified)
+  {
+    return false;
   }
 
   for(int i=index+1;i<5;i++)

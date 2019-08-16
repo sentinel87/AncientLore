@@ -1854,7 +1854,7 @@ void drawPauseScreen(uint8_t EndGraph[100],int8_t cursorPosY)
   gb.display.setColor(YELLOW);
   String scoreStr=scoreStrMod(Score);
   gb.display.setCursor(19, 17);
-  gb.display.println(gameScoreStr);
+  drawCenterText(gameScoreStr,17);
   gb.display.setCursor(22, 25);
   gb.display.println(scoreStr);
   gb.display.setColor(WHITE);
@@ -1873,19 +1873,20 @@ void drawEndgameScreen(uint8_t EndGraph[100],bool NewHighScore,uint8_t LevelId)
   gb.display.setCursor(18, 17);
   if(LevelId==200)
   {
+    drawCenterText(victoryStr,17);
     gb.display.println(victoryStr);
     gb.display.drawImage(35,5,IMAGE_VICTORY);
   }
   else
   {
-    gb.display.println(gameOverStr);
+    drawCenterText(gameOverStr,17);
     gb.display.drawImage(35,5,IMAGE_FAILURE); 
   }
   if(NewHighScore)
   {
     gb.display.setCursor(18, 25);
     gb.display.setColor(GREEN);
-    gb.display.println(highScoreStr);  
+    drawCenterText(highScoreStr,25); 
   }
   String scoreStr=scoreStrMod(Score);
   gb.display.setColor(YELLOW);
@@ -1907,6 +1908,15 @@ String scoreStrMod(int score)
     result=spaces + result;
   }
   return result;
+}
+
+void drawCenterText(const MultiLang phrase[3],int posY)
+{
+  String text=gb.language.get(phrase,3);
+  int count=text.length()*4;
+  int startingPoint=40-(count/2);
+  gb.display.setCursor(startingPoint, posY);
+  gb.display.println(text);
 }
 
 //----------------------Player draw---------------
