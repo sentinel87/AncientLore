@@ -24,8 +24,8 @@ const Gamebuino_Meta::Sound_FX cupSfx[] = {
 
 //---------------------Game variables--------
 int8_t posX=40;
-int8_t posY=20;
-uint8_t LevelId=55;
+int8_t posY=8;
+uint8_t LevelId=49;
 uint8_t SelectedField=0;
 int8_t PlayerHP=21;
 int8_t Keys=60;
@@ -172,10 +172,10 @@ void loop() {
 
 void prepareNewGame()
 {
-  posX=8;
-  posY=37;
+  posX=40;
+  posY=20;
   PlayerHP=24;
-  LevelId=55;
+  LevelId=33;
   ScoreChecked=false;
   NewHighScore=false;
   Score=0;

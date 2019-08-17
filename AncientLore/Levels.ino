@@ -1887,7 +1887,7 @@ uint8_t LevelPlan58[114]={
   0, //west
   0, //south
   59, //east
-  4, //enemyId
+  2, //enemyId
   16, //enemyHealth
   0,0, //Ground limit
   8,80, //Floor1 limit
@@ -1920,7 +1920,7 @@ uint8_t LevelPlan59[114]={
   58, //west
   60, //south
   0, //east
-  8, //enemyId
+  4, //enemyId
   16, //enemyHealth
   24,32, //Ground limit
   0,64, //Floor1 limit
@@ -1935,8 +1935,8 @@ uint8_t LevelPlan59[114]={
   0, //Enemy RightMax
   0, //Enemy Moving Direction
   0, //Secret
-  1,0,0,0,0,0,0,0,1,0,
-  1,0,0,0,0,0,0,0,1,0,
+  1,0,30,0,34,0,0,0,1,0,
+  1,0,31,0,35,0,0,0,1,0,
   1,14,17,17,17,17,17,20,1,0,
   0,11,0,0,0,0,0,20,5,5,
   0,11,0,0,0,0,0,20,5,5,
@@ -1953,7 +1953,7 @@ uint8_t LevelPlan60[114]={
   61, //west
   60, //south
   62, //east
-  5, //enemyId
+  7, //enemyId
   16, //enemyHealth
   8,80, //Ground limit
   8,64, //Floor1 limit
@@ -1966,7 +1966,7 @@ uint8_t LevelPlan60[114]={
   20, //Enemy PosY
   0, //Enemy LeftMax
   0, //Enemy RightMax
-  0, //Enemy Moving Direction
+  1, //Enemy Moving Direction
   61, //Secret
   5,0,0,20,0,0,0,0,0,0,
   6,0,0,20,0,0,0,0,0,0,
@@ -1974,8 +1974,8 @@ uint8_t LevelPlan60[114]={
   6,0,0,0,0,0,0,20,5,0,
   5,0,0,0,0,0,0,20,5,0,
   6,6,6,6,6,20,6,6,6,0,
-  5,0,0,0,0,20,0,0,0,0,
-  6,0,0,0,0,20,0,0,0,0,
+  5,32,0,0,0,20,0,0,0,0,
+  6,33,0,0,0,20,0,0,0,0,
   5,5,5,5,5,5,5,5,5,5
 };
 
@@ -2031,11 +2031,11 @@ uint8_t LevelPlan62[114]={
   40, //Enemy PosX
   2, //Enemy PosY
   24, //Enemy LeftMax
-  64, //Enemy RightMax
+  50, //Enemy RightMax
   0, //Enemy Moving Direction
   0, //Secret
-  14,17,15,17,15,17,15,17,16,5,
-  11,0,12,0,12,0,12,0,13,6,
+  14,17,15,17,15,17,16,0,30,5,
+  11,0,12,0,12,0,13,0,31,6,
   5,5,5,5,5,5,5,5,5,5,
   0,0,6,0,0,0,0,0,0,0,
   0,0,5,0,0,0,0,0,0,0,
@@ -2064,7 +2064,7 @@ uint8_t LevelPlan63[114]={
   40, //Enemy PosX
   37, //Enemy PosY
   24, //Enemy LeftMax
-  64, //Enemy RightMax
+  56, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
   5,5,5,0,0,0,20,5,5,5,
@@ -2100,8 +2100,8 @@ uint8_t LevelPlan64[114]={
   0, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
-  0,30,0,0,0,0,0,0,0,1,
-  0,31,0,0,0,0,0,0,0,1,
+  0,30,0,32,0,0,0,0,0,1,
+  0,31,0,33,0,0,0,0,0,1,
   0,5,5,5,5,5,5,5,20,1,
   5,5,5,5,5,5,5,0,20,1,
   5,5,5,5,5,5,5,0,20,5,
@@ -3578,6 +3578,13 @@ void renewMonsters()
   LevelPlan55[7]=16;
   LevelPlan56[7]=16;
 
+  LevelPlan58[7]=16;
+  LevelPlan59[7]=16;
+  LevelPlan60[7]=16;
+
+  LevelPlan62[7]=16;
+  LevelPlan63[7]=16;
+  LevelPlan64[7]=16;
   LevelPlan88[7]=16;
   LevelPlan89[7]=16;
   LevelPlan90[7]=16;
@@ -3607,6 +3614,8 @@ void renewCups()
   setCup(LevelPlan32,90);
   setCup(LevelPlan34,60);
   setCup(LevelPlan36,55);
+  setCup(LevelPlan39,27);
+  setCup(LevelPlan39,87);
   setCup(LevelPlan40,58);
   setCup(LevelPlan56,31);
   setCup(LevelPlan44,90);
@@ -3615,17 +3624,13 @@ void renewCups()
   setCup(LevelPlan49,88);
   setCup(LevelPlan52,30);
   setCup(LevelPlan53,55);
-  //setCup(LevelPlan88,88);
+  setCup(LevelPlan60,85);
+  setCup(LevelPlan61,89);
+  setCup(LevelPlan64,27);
   setCup(LevelPlan87,29);
   setCup(LevelPlan92,87);
   setCup(LevelPlan92,89);
 
-  LevelPlan39[27]=32;
-  LevelPlan39[37]=33;
-  LevelPlan39[87]=32;
-  LevelPlan39[97]=33;
-  LevelPlan61[89]=32;
-  LevelPlan61[99]=33;
   LevelPlan68[55]=32;
   LevelPlan68[65]=33;
   LevelPlan68[57]=32;
@@ -3664,12 +3669,13 @@ void renewDiamonds()
   setDiamond(LevelPlan52,28);
   setDiamond(LevelPlan54,55);
   setDiamond(LevelPlan55,26);
+  setDiamond(LevelPlan59,26);
+  setDiamond(LevelPlan62,32);
+  setDiamond(LevelPlan64,25);
   setDiamond(LevelPlan88,88);
   setDiamond(LevelPlan89,86);
   setDiamond(LevelPlan91,60);
   
-  LevelPlan64[25]=30;
-  LevelPlan64[35]=31;
   LevelPlan70[55]=30;
   LevelPlan70[65]=31;
   LevelPlan71[32]=30;
@@ -3708,13 +3714,12 @@ void renewPowers()
   setPower(LevelPlan38,61);
   setPower(LevelPlan46,59);
   setPower(LevelPlan47,59);
+  setPower(LevelPlan53,57);
   setPower(LevelPlan56,59);
+  setPower(LevelPlan59,28);
+  setPower(LevelPlan61,56);
   setPower(LevelPlan87,27);
 
-  LevelPlan53[57]=34;
-  LevelPlan53[67]=35;
-  LevelPlan61[56]=34;
-  LevelPlan61[66]=35;
   LevelPlan75[87]=34;
   LevelPlan75[97]=35;
   LevelPlan83[32]=34;
