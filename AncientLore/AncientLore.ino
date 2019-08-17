@@ -173,9 +173,9 @@ void loop() {
 void prepareNewGame()
 {
   posX=8;
-  posY=20;
+  posY=37;
   PlayerHP=24;
-  LevelId=40;
+  LevelId=55;
   ScoreChecked=false;
   NewHighScore=false;
   Score=0;
@@ -363,7 +363,7 @@ void game()
   gb.display.setColor(WHITE);
   //gb.display.println(gb.getCpuLoad());
   //gb.display.println(Fight);
-  //gb.display.println(gb.getFreeRam());
+  gb.display.println(gb.getFreeRam());
   switchLocation=false;
   if(gb.buttons.repeat(BUTTON_RIGHT,0))
   {
@@ -593,7 +593,7 @@ bool checkFloorBordersLeft(uint8_t arr[114])
   return result;
 }
 
-bool checkElevationUp(uint8_t arr[114])
+bool checkElevationUp(uint8_t arr[114]) //elevation check for climbing up
 {
   bool result=false;
   if((posY<=37) && (posY>20) && (posX>=arr[14]) && ((posX+7)<=(arr[14]+8)))
@@ -616,7 +616,7 @@ bool checkElevationUp(uint8_t arr[114])
   return result;
 }
 
-bool checkElevationDown(uint8_t arr[114])
+bool checkElevationDown(uint8_t arr[114]) //elevation check for climbing down
 {
   bool result=false;
   if((posY<37) && (posY>=20) && (posX>=arr[14]) && ((posX+7)<=(arr[14]+8)))
@@ -639,7 +639,7 @@ bool checkElevationDown(uint8_t arr[114])
   return result;
 }
 //----------------------Object collision----------------
-void checkCollider(uint8_t displayPlan[114],String moveDirection)
+void checkCollider(uint8_t displayPlan[114],String moveDirection) //we check if player hit collectible
 {
   if(posY==2)
   {
@@ -667,7 +667,7 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection)
       PlayerHP=24;
     }
   }
-  else if(displayPlan[SelectedField]==31) //collision with diamond
+  else if(displayPlan[SelectedField]==31) //collision with the diamond
   {
     gb.sound.fx(diamondSfx);
     gb.lights.fill(YELLOW);
@@ -677,7 +677,7 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection)
     Keys--;
     checkGateStatus(); //we check if gate will open
   }
-  else if(displayPlan[SelectedField]==35) //collision with power
+  else if(displayPlan[SelectedField]==35) //collision with the power
   {
     gb.sound.fx(loreSfx);
     gb.lights.fill(BLUE);
@@ -691,7 +691,7 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection)
   }
 }
 
-uint8_t identifyMapField(String moveDirection)
+uint8_t identifyMapField(String moveDirection) //we identify array field of chamber
 {
   uint8_t mapField=0;
   uint8_t result=(posX/8);
@@ -730,6 +730,11 @@ bool checkEnemyPositionRight(uint8_t arr[114])
     {
       result=true;
     }
+    else if(arr[18]==posX+5)
+    {
+      result=true;
+      posX-=2;
+    }
   }
   else if(posY==20 && arr[19]==20)
   {
@@ -737,12 +742,22 @@ bool checkEnemyPositionRight(uint8_t arr[114])
     {
       result=true;
     }
+    else if(arr[18]==posX+5)
+    {
+      result=true;
+      posX-=2;
+    }
   }
   else if(posY==37 && arr[19]==37)
   {
     if(arr[18]==posX+7)
     {
       result=true;
+    }
+    else if(arr[18]==posX+6)
+    {
+      result=true;
+      posX-=2;
     }
   }
   return result;
@@ -761,6 +776,11 @@ bool checkEnemyPositionLeft(uint8_t arr[114])
     {
       result=true;
     }
+    else if(arr[18]+5==posX)
+    {
+      posX+=2;
+      result=true;
+    }
   }
   else if(posY==20 && arr[19]==20)
   {
@@ -768,11 +788,21 @@ bool checkEnemyPositionLeft(uint8_t arr[114])
     {
       result=true;
     }
+    else if(arr[18]+5==posX)
+    {
+      posX+=2;
+      result=true;
+    }
   }
   else if(posY==37 && arr[19]==37)
   {
     if(arr[18]+7==posX)
     {
+      result=true;
+    }
+    else if(arr[18]+5==posX)
+    {
+      posX+=2;
       result=true;
     }
   }
@@ -823,7 +853,7 @@ void enemyActions(uint8_t displayPlan[114])
       {
         displayPlan[18]--;
       }
-      else
+      else //change enemy move direction
       {
         displayPlan[22]=1;
       }
@@ -838,7 +868,7 @@ void enemyActions(uint8_t displayPlan[114])
       {
         displayPlan[18]++;
       }
-      else
+      else //change enemy move direction
       {
         displayPlan[22]=0;
       }
@@ -846,7 +876,7 @@ void enemyActions(uint8_t displayPlan[114])
   }
 }
 
-bool enemyHit()
+bool enemyHit() //random chance to strike
 {
   uint8_t randomNumber  = random(0,10);
   if(randomNumber==0 || randomNumber==2 || randomNumber==4 ||randomNumber==6 || randomNumber==8)
@@ -885,7 +915,7 @@ void drawEnemySprite(uint8_t displayPlan[114])
   }
 }
 
-void checkEnemyCollision(uint8_t displayPlan[114])
+void checkEnemyCollision(uint8_t displayPlan[114]) //we check if enemy and player are engaged
 {
   if((posY==displayPlan[19]) && (displayPlan[7]>0) && ((posX+7==displayPlan[18])||(posX-1==displayPlan[18]+6)))
   {
