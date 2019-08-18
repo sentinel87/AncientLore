@@ -23,28 +23,28 @@ const Gamebuino_Meta::Sound_FX cupSfx[] = {
 };
 
 //---------------------Game variables--------
-int8_t posX=40;
-int8_t posY=8;
 uint8_t LevelId=49;
 uint8_t SelectedField=0;
-int8_t PlayerHP=21;
-int8_t Keys=60;
-int8_t Lore=2;
 bool Fight=false;
 int8_t frameMod=0; // to reduce enemy damage between frames
-int8_t playerDirection=1;
-
+bool switchLocation=false;
 int Score=0;
 bool ScoreChecked=false;
 bool NewHighScore=false;
+//--------------------Player variables------
+int8_t posX=40;
+int8_t posY=8;
+int8_t PlayerHP=24;
+int8_t Lore=3;
+int8_t Keys=31;
+int8_t playerDirection=1;
 
 bool climbing=false;
 bool hanging=false;
 bool walking=false;
 bool attacking=false;
-bool switchLocation=false;
 
-//menu screens assets
+//----------Menu screens assets and variables
 
 bool mainMenu=true;
 bool scoreMenu=false;
@@ -116,6 +116,8 @@ const SaveDefault savefileDefaults[] = {
   { 4,SAVETYPE_INT,0,0 }
 };
 
+//--------------Functions-------------------------
+
 void setup() {
   gb.begin();
   gb.save.config(savefileDefaults);
@@ -130,11 +132,6 @@ void loop() {
   while(!gb.update())
   gb.display.clear();
   gb.lights.clear();
-  //if(true)
-  //{
-  //  titleScreen();
-  //  return;
-  //}
   if(mainMenu==true)
   {
     menuScreen();
@@ -175,12 +172,13 @@ void prepareNewGame()
   posX=40;
   posY=20;
   PlayerHP=24;
-  LevelId=33;
+  LevelId=1;
   ScoreChecked=false;
   NewHighScore=false;
+  playerDirection=1;
   Score=0;
-  Keys=1;
-  Lore=2;
+  Keys=31;
+  Lore=3;
 
   renewMonsters();
   renewCups();
@@ -358,12 +356,11 @@ void game()
   checkEnemyCollision(DisplayPlan); //we check if player is connected to the enemy
   drawLevel(DisplayPlan);
   enemyTurn(DisplayPlan);
-  gb.display.setCursor(10, 5);
-  gb.display.setFontSize(1);
-  gb.display.setColor(WHITE);
+  //gb.display.setCursor(10, 5);
+  //gb.display.setFontSize(1);
+  //gb.display.setColor(WHITE);
   //gb.display.println(gb.getCpuLoad());
-  //gb.display.println(Fight);
-  gb.display.println(gb.getFreeRam());
+  //gb.display.println(gb.getFreeRam());
   switchLocation=false;
   if(gb.buttons.repeat(BUTTON_RIGHT,0))
   {

@@ -3,9 +3,9 @@ uint8_t LevelPlan1[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  0, //east
-  2, //south
   0, //west
+  2, //south
+  0, //east
   5, //enemyId
   16, //enemyHealth
   16,64, //Ground limit
@@ -36,9 +36,9 @@ uint8_t LevelPlan2[114]={
   9, //frame width 
   10, //frame height
   1, //north
-  0, //east
+  0, //west
   0, //south
-  3, //west
+  3, //east
   6, //enemyId
   16, //enemyHealth
   16,80, //Ground limit
@@ -69,9 +69,9 @@ uint8_t LevelPlan3[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  2, //east
+  2, //west
   0, //south
-  4, //west
+  4, //east
   1, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
@@ -102,9 +102,9 @@ uint8_t LevelPlan4[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  3, //east
+  3, //west
   0, //south
-  5, //west
+  5, //east
   8, //enemyId
   16, //enemyHealth
   0,64, //Ground limit
@@ -128,16 +128,16 @@ uint8_t LevelPlan4[114]={
   1,1,1,1,1,1,1,1,1,1,
   0,0,0,0,0,30,0,1,1,1,
   0,0,0,0,0,31,0,1,1,1,
-  2,2,2,2,2,2,2,2,1,1
+  2,2,2,2,2,2,2,1,1,1
 };
 
 uint8_t LevelPlan5[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  4, //east
+  4, //west
   6, //south
-  0, //west
+  0, //east
   7, //enemyId
   16, //enemyHealth
   56,64, //Ground limit
@@ -147,7 +147,7 @@ uint8_t LevelPlan5[114]={
   88, //Floor1 Ladder
   88, //Floor2 Ladder
   56, //FloorExit
-  50, //Enemy PosX
+  40, //Enemy PosX
   20, //Enemy PosY
   0, //Enemy LeftMax
   0, //Enemy RightMax
@@ -160,7 +160,7 @@ uint8_t LevelPlan5[114]={
   0,0,0,0,0,0,0,0,1,1,
   1,1,1,1,1,1,1,20,1,1,
   1,1,1,1,1,0,0,20,1,1,
-  1,1,1,1,1,0,0,20,1,1,
+  1,3,1,3,1,0,0,20,1,1,
   1,1,1,1,1,0,0,20,1,1
 };
 
@@ -168,9 +168,9 @@ uint8_t LevelPlan6[114]={
   9, //frame width 
   10, //frame height
   5, //north
-  16, //east
+  16, //west
   0, //south
-  7, //west
+  7, //east
   4, //enemyId
   16, //enemyHealth
   16,80, //Ground limit
@@ -201,9 +201,9 @@ uint8_t LevelPlan7[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  6, //east
+  6, //west
   0, //south
-  8, //west
+  8, //east
   3, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
@@ -234,9 +234,9 @@ uint8_t LevelPlan8[114]={
   9, //frame width 
   10, //frame height
   0, //north
-  7, //east
+  7, //west
   0, //south
-  9, //west
+  9, //east
   2, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
@@ -498,9 +498,9 @@ uint8_t LevelPlan16[114]={ //secret 1
   9, //frame width 
   10, //frame height
   0, //north
-  0, //east
+  0, //west
   0, //south
-  6, //west
+  6, //east
   0, //enemyId
   0, //enemyHealth
   8,80, //Ground limit
@@ -2151,7 +2151,7 @@ uint8_t LevelPlan66[114]={
   65, //west
   70, //south
   76, //east
-  9, //enemyId
+  5, //enemyId
   16, //enemyHealth
   32,40, //Ground limit
   0,80, //Floor1 limit
@@ -2160,7 +2160,7 @@ uint8_t LevelPlan66[114]={
   40, //Floor1 Ladder
   40, //Floor2 Ladder
   32, //FloorExit
-  64, //Enemy PosX
+  56, //Enemy PosX
   20, //Enemy PosY
   0, //Enemy LeftMax
   0, //Enemy RightMax
@@ -2184,7 +2184,7 @@ uint8_t LevelPlan67[114]={
   68, //west
   66, //south
   0, //east
-  7, //enemyId
+  4, //enemyId
   16, //enemyHealth
   40,48, //Ground limit
   8,72, //Floor1 limit
@@ -2268,8 +2268,8 @@ uint8_t LevelPlan69[114]={
   5,20,5,5,5,5,5,5,5,5,
   0,20,0,0,6,6,6,6,6,6,
   0,20,0,0,5,5,5,5,5,5,
-  0,20,0,0,0,0,0,0,6,6,
-  0,20,0,0,0,0,0,0,5,5,
+  0,20,0,0,0,0,32,0,6,6,
+  0,20,0,0,0,0,33,0,5,5,
   0,14,17,15,17,15,17,15,17,15,
   0,11,0,12,0,12,0,12,0,12,
   0,11,0,12,0,12,0,12,0,12,
@@ -2294,15 +2294,15 @@ uint8_t LevelPlan70[114]={
   88, //FloorExit
   40, //Enemy PosX
   20, //Enemy PosY
-  16, //Enemy LeftMax
+  24, //Enemy LeftMax
   48, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
   5,5,5,0,20,0,0,0,5,5,
   6,6,6,0,20,0,0,0,6,6,
   5,5,5,17,17,17,17,20,5,5,
-  6,30,0,0,0,0,0,20,6,6,
-  5,31,0,0,0,0,0,20,5,5,
+  6,30,32,0,0,0,0,20,6,6,
+  5,31,33,0,0,0,0,20,5,5,
   17,15,17,15,17,15,17,15,17,16,
   0,12,0,12,0,12,0,12,0,13,
   0,12,0,12,0,12,0,12,0,13,
@@ -2315,8 +2315,8 @@ uint8_t LevelPlan71[114]={
   76, //north
   70, //west
   0, //south
-  0, //east
-  9, //enemyId
+  86, //east
+  7, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
   8,40, //Floor1 limit
@@ -2325,10 +2325,10 @@ uint8_t LevelPlan71[114]={
   32, //Floor1 Ladder
   56, //Floor2 Ladder
   88, //FloorExit
-  40, //Enemy PosX
-  37, //Enemy PosY
-  16, //Enemy LeftMax
-  56, //Enemy RightMax
+  16, //Enemy PosX
+  20, //Enemy PosY
+  0, //Enemy LeftMax
+  0, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
   5,0,0,0,0,0,0,20,5,5,
@@ -2349,7 +2349,7 @@ uint8_t LevelPlan72[114]={
   73, //west
   0, //south
   69, //east
-  5, //enemyId
+  8, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
   0,72, //Floor1 limit
@@ -2358,7 +2358,7 @@ uint8_t LevelPlan72[114]={
   88, //Floor1 Ladder
   88, //Floor2 Ladder
   88, //FloorExit
-  20, //Enemy PosX
+  32, //Enemy PosX
   20, //Enemy PosY
   0, //Enemy LeftMax
   0, //Enemy RightMax
@@ -2394,7 +2394,7 @@ uint8_t LevelPlan73[114]={
   40, //Enemy PosX
   37, //Enemy PosY
   16, //Enemy LeftMax
-  64, //Enemy RightMax
+  56, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
   0,0,0,0,0,0,0,0,0,0,
@@ -2430,8 +2430,8 @@ uint8_t LevelPlan74[114]={
   0, //Enemy RightMax
   0, //Enemy Moving Direction
   75, //Secret
-  5,5,5,5,0,0,0,0,0,0,
-  6,6,6,0,0,0,0,0,0,0,
+  5,5,5,5,32,0,0,0,0,0,
+  6,6,6,0,33,0,0,0,0,0,
   5,5,5,5,5,5,5,5,5,5,
   6,0,0,13,0,0,13,0,0,13,
   5,0,0,13,0,0,13,0,0,13,
@@ -2481,7 +2481,7 @@ uint8_t LevelPlan76[114]={
   66, //west
   71, //south
   77, //east
-  4, //enemyId
+  2, //enemyId
   16, //enemyHealth
   24,80, //Ground limit
   0,16, //Floor1 limit
@@ -2492,18 +2492,18 @@ uint8_t LevelPlan76[114]={
   56, //FloorExit
   48, //Enemy PosX
   2, //Enemy PosY
-  32, //Enemy LeftMax
-  64, //Enemy RightMax
+  24, //Enemy LeftMax
+  48, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
-  5,0,0,0,0,0,0,0,0,0,
-  6,0,0,0,0,0,0,0,0,0,
+  5,0,0,0,0,0,0,34,0,0,
+  6,0,0,0,0,0,0,35,0,0,
   5,20,5,17,17,17,17,17,17,17,
   0,20,6,0,0,0,0,0,0,0,
   0,20,5,12,12,12,12,12,12,12,
   6,6,6,6,6,6,6,6,6,6,
-  5,5,5,0,0,0,0,0,0,0,
-  6,6,6,0,0,0,0,0,0,0,
+  5,5,5,0,32,0,0,0,0,0,
+  6,6,6,0,33,0,0,0,0,0,
   5,5,5,5,5,5,5,20,5,5
 };
 
@@ -2514,7 +2514,7 @@ uint8_t LevelPlan77[114]={
   76, //west
   86, //south
   78, //east
-  6, //enemyId
+  9, //enemyId
   16, //enemyHealth
   0,72, //Ground limit
   64,72, //Floor1 limit
@@ -2525,8 +2525,8 @@ uint8_t LevelPlan77[114]={
   16, //FloorExit
   48, //Enemy PosX
   37, //Enemy PosY
-  0, //Enemy LeftMax
-  0, //Enemy RightMax
+  26, //Enemy LeftMax
+  54, //Enemy RightMax
   0, //Enemy Moving Direction
   0, //Secret
   0,0,0,0,0,0,0,0,0,0,
@@ -2547,7 +2547,7 @@ uint8_t LevelPlan78[114]={
   77, //west
   85, //south
   79, //east
-  8, //enemyId
+  10, //enemyId
   16, //enemyHealth
   16,24, //Ground limit
   8,72, //Floor1 limit
@@ -2580,7 +2580,7 @@ uint8_t LevelPlan79[114]={
   78, //west
   84, //south
   80, //east
-  1, //enemyId
+  2, //enemyId
   16, //enemyHealth
   16,80, //Ground limit
   40,80, //Floor1 limit
@@ -2598,8 +2598,8 @@ uint8_t LevelPlan79[114]={
   0,20,0,0,0,0,0,0,0,0,
   0,20,0,0,0,0,0,0,0,0,
   5,5,5,5,5,5,5,5,5,5,
-  6,6,0,0,0,11,0,0,0,0,
-  5,5,0,0,0,11,0,0,0,0,
+  6,6,0,0,0,11,32,0,0,0,
+  5,5,0,0,0,11,33,0,0,0,
   6,6,0,0,0,17,17,17,17,17,
   5,5,30,0,0,0,0,0,0,0,
   6,6,31,0,0,0,0,0,0,0,
@@ -2613,7 +2613,7 @@ uint8_t LevelPlan80[114]={
   79, //west
   0, //south
   81, //east
-  11, //enemyId
+  3, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
   0,80, //Floor1 limit
@@ -2646,7 +2646,7 @@ uint8_t LevelPlan81[114]={
   80, //west
   0, //south
   0, //east
-  9, //enemyId
+  1, //enemyId
   16, //enemyHealth
   0,72, //Ground limit
   0,72, //Floor1 limit
@@ -2657,7 +2657,7 @@ uint8_t LevelPlan81[114]={
   88, //FloorExit
   48, //Enemy PosX
   37, //Enemy PosY
-  8, //Enemy LeftMax
+  16, //Enemy LeftMax
   48, //Enemy RightMax
   1, //Enemy Moving Direction
   0, //Secret
@@ -2679,7 +2679,7 @@ uint8_t LevelPlan82[114]={
   84, //west
   0, //south
   83, //east
-  10, //enemyId
+  7, //enemyId
   16, //enemyHealth
   0,32, //Ground limit
   16,64, //Floor1 limit
@@ -2790,14 +2790,14 @@ uint8_t LevelPlan85[114]={
   48, //Enemy PosX
   37, //Enemy PosY
   32, //Enemy LeftMax
-  64, //Enemy RightMax
+  50, //Enemy RightMax
   0, //Enemy Moving Direction
   0, //Secret
   5,0,20,0,0,0,0,0,0,0,
   6,0,20,0,0,0,0,0,0,0,
   5,5,5,5,5,5,5,5,5,5,
-  6,6,0,0,0,0,0,0,6,6,
-  5,5,0,0,0,0,0,0,5,5,
+  6,6,0,0,0,0,0,34,6,6,
+  5,5,0,0,0,0,0,35,5,5,
   0,0,0,20,6,6,6,6,6,6,
   0,0,0,20,0,0,0,0,0,0,
   0,0,0,20,0,0,0,0,0,0,
@@ -2811,7 +2811,7 @@ uint8_t LevelPlan86[114]={
   71, //west
   0, //south
   85, //east
-  4, //enemyId
+  6, //enemyId
   16, //enemyHealth
   0,80, //Ground limit
   8,24, //Floor1 limit
@@ -2823,7 +2823,7 @@ uint8_t LevelPlan86[114]={
   48, //Enemy PosX
   37, //Enemy PosY
   32, //Enemy LeftMax
-  64, //Enemy RightMax
+  56, //Enemy RightMax
   0, //Enemy Moving Direction
   0, //Secret
   5,0,20,5,5,5,5,5,5,5,
@@ -3585,6 +3585,27 @@ void renewMonsters()
   LevelPlan62[7]=16;
   LevelPlan63[7]=16;
   LevelPlan64[7]=16;
+  LevelPlan65[7]=16;
+  LevelPlan66[7]=16;
+  LevelPlan67[7]=16;
+
+  LevelPlan69[7]=16;
+  LevelPlan70[7]=16;
+  LevelPlan71[7]=16;
+  LevelPlan72[7]=16;
+  LevelPlan73[7]=16;
+  LevelPlan74[7]=16;
+  LevelPlan76[7]=16;
+  LevelPlan77[7]=16;
+  LevelPlan78[7]=16;
+  LevelPlan79[7]=16;
+  LevelPlan80[7]=16;
+  LevelPlan81[7]=16;
+  LevelPlan82[7]=16;
+  
+  LevelPlan84[7]=16;
+  LevelPlan85[7]=16;
+  LevelPlan86[7]=16;
   LevelPlan88[7]=16;
   LevelPlan89[7]=16;
   LevelPlan90[7]=16;
@@ -3627,18 +3648,17 @@ void renewCups()
   setCup(LevelPlan60,85);
   setCup(LevelPlan61,89);
   setCup(LevelPlan64,27);
+  setCup(LevelPlan68,55);
+  setCup(LevelPlan68,57);
+  setCup(LevelPlan69,60);
+  setCup(LevelPlan74,28);
+  setCup(LevelPlan75,86);
+  setCup(LevelPlan76,88);
+  setCup(LevelPlan79,60);
+  setCup(LevelPlan83,30);
   setCup(LevelPlan87,29);
   setCup(LevelPlan92,87);
   setCup(LevelPlan92,89);
-
-  LevelPlan68[55]=32;
-  LevelPlan68[65]=33;
-  LevelPlan68[57]=32;
-  LevelPlan68[67]=33;
-  LevelPlan75[86]=32;
-  LevelPlan75[96]=33;
-  LevelPlan83[30]=32;
-  LevelPlan83[40]=33;
 }
 
 void setCup(uint8_t displayPlan[114],uint8_t index)
@@ -3672,26 +3692,17 @@ void renewDiamonds()
   setDiamond(LevelPlan59,26);
   setDiamond(LevelPlan62,32);
   setDiamond(LevelPlan64,25);
+  setDiamond(LevelPlan70,55);
+  setDiamond(LevelPlan72,61);
+  setDiamond(LevelPlan72,32);
+  setDiamond(LevelPlan71,55);
+  setDiamond(LevelPlan78,62);
+  setDiamond(LevelPlan79,86);
+  setDiamond(LevelPlan84,62);
+  setDiamond(LevelPlan86,86);
   setDiamond(LevelPlan88,88);
   setDiamond(LevelPlan89,86);
   setDiamond(LevelPlan91,60);
-  
-  LevelPlan70[55]=30;
-  LevelPlan70[65]=31;
-  LevelPlan71[32]=30;
-  LevelPlan71[55]=31;
-  LevelPlan72[65]=30;
-  LevelPlan72[71]=31;
-  LevelPlan72[32]=30;
-  LevelPlan72[42]=31;
-  LevelPlan78[62]=30;
-  LevelPlan78[72]=31;
-  LevelPlan79[86]=30;
-  LevelPlan79[96]=31;
-  LevelPlan84[62]=30;
-  LevelPlan84[72]=31;
-  LevelPlan86[86]=30;
-  LevelPlan86[96]=31;
 }
 
 void setDiamond(uint8_t displayPlan[114],uint8_t index)
@@ -3719,11 +3730,11 @@ void renewPowers()
   setPower(LevelPlan59,28);
   setPower(LevelPlan61,56);
   setPower(LevelPlan87,27);
-
-  LevelPlan75[87]=34;
-  LevelPlan75[97]=35;
-  LevelPlan83[32]=34;
-  LevelPlan83[42]=35; 
+  setPower(LevelPlan70,56);
+  setPower(LevelPlan75,87);
+  setPower(LevelPlan76,31);
+  setPower(LevelPlan83,32); 
+  setPower(LevelPlan85,61);
 }
 
 void setPower(uint8_t displayPlan[114],uint8_t index)
