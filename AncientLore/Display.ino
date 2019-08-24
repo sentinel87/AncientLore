@@ -1874,7 +1874,6 @@ void drawEndgameScreen(uint8_t EndGraph[100],bool NewHighScore,uint8_t LevelId)
   if(LevelId==200)
   {
     drawCenterText(victoryStr,17);
-    gb.display.println(victoryStr);
     gb.display.drawImage(35,5,IMAGE_VICTORY);
   }
   else
